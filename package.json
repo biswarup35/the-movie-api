@@ -1,7 +1,7 @@
 {
   "name": "the-movie-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon index.ts",

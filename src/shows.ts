@@ -10,11 +10,13 @@ const shows = async (req: Request, res: Response) => {
       Accept:
         "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
       Host: "www.rottentomatoes.com",
+      Origin: "https://www.rottentomatoes.com",
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:88.0) Gecko/20100101 Firefox/88.0",
       Pragma: "no-cache",
       TE: "Trailers",
       "Upgrade-Insecure-Requests": 1,
+      isAxios: false,
     };
     const { data: html } = await axios.get(url, { headers });
     const dom = new JSDOM(html);
