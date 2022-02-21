@@ -16,7 +16,6 @@ const shows = async (req: Request, res: Response) => {
       Pragma: "no-cache",
       TE: "Trailers",
       "Upgrade-Insecure-Requests": 1,
-      isAxios: false,
     };
     const { data: html } = await axios.get(url, { headers });
     const dom = new JSDOM(html);
