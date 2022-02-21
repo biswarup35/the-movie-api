@@ -10,6 +10,7 @@ const movies = async (req: Request, res: Response) => {
       Accept:
         "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
       Host: "www.rottentomatoes.com",
+      Origin: "https://www.rottentomatoes.com",
       "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:88.0) Gecko/20100101 Firefox/88.0",
       Pragma: "no-cache",
@@ -25,6 +26,8 @@ const movies = async (req: Request, res: Response) => {
       const poster =
         poster_container?.querySelector("img").getAttribute("data-src") ??
         "http://via.placeholder.com/206x305";
+
+      const title = document.querySelector("h1").textContent.trim();
 
       const _meta = document.querySelector("ul.content-meta.info");
       const list = _meta.querySelectorAll("li");
@@ -69,6 +72,8 @@ const movies = async (req: Request, res: Response) => {
         .replace(/\n/g, " ");
 
       res.status(200).json({
+        show_id,
+        title,
         poster,
         synopsis,
         meta,
