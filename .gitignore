@@ -1,3 +1,7 @@
 /node_modules
 /dist/
 .vscode
+
+# Remove environment variables
+.env
+.env.local
